@@ -23,7 +23,9 @@ const MovieList = () => {
           </select>
         </div>
       </header>
-      <MovieCard />
+      <div className="movieCards">
+        <MovieCard />
+      </div>
     </section>
   );
 };

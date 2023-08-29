@@ -1,10 +1,10 @@
-import "./MovieList.css";
+import "./MovieCard.css";
 
 const MovieCard = () => {
   return (
     <a href="" className="movieCard">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1yYevfu_1beTo5NGDE4FqYjJL8CmgOb5cH5oMrxf&s.jpg"
+        src="https://www.washingtonpost.com/graphics/2019/entertainment/oscar-nominees-movie-poster-design/img/black-panther-web.jpg"
         alt="fast and furious 5"
         className="moviePoster"
       />
@@ -14,7 +14,9 @@ const MovieCard = () => {
         <div className="movieDateRate">
           <p>10-20-2000</p>
           <p>8.0 ⭐</p>
-          <p className="movieDescription">
+        </div>
+        <div className="movieDescription">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
             officiis, explicabo incidunt architecto blanditiis laudantium
             quisquam omnis natus earum in quibusdam impedit, repudiandae
