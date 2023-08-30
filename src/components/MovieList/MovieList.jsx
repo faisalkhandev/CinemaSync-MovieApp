@@ -1,9 +1,26 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import "./MovieList.css";
+import FilterGroup from "./FilterGroup";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
+  console.log("moviesData ", movies);
+  const [filterMovies, setFilterMovies] = useState([]);
+  const [minRating, setMinRating] = useState(0);
+
+  function handleRating(rate) {
+    // console.log("rateSelected", rate);
+    if (minRating === rate) {
+      setMinRating(0);
+      setFilterMovies(movies);
+    } else {
+      setMinRating(rate);
+      const filterMovies = movies.filter((movie) => movie.vote_average >= rate);
+      setFilterMovies(filterMovies);
+    }
+  }
 
   useEffect(() => {
     fetchApi();
@@ -15,6 +32,7 @@ const MovieList = () => {
     );
     const data = await response.json();
     setMovies(data.results);
+    setFilterMovies(data.results);
   }
 
   return (
@@ -22,11 +40,7 @@ const MovieList = () => {
       <header className="alignCenter movieListHeader">
         <h2 className="movieListHeading">Popular 🔥</h2>
         <div className="movieListFs">
-          <ul className="movieFilter">
-            <li className="movieFilterItem active">5+</li>
-            <li className="movieFilterItem">6+</li>
-            <li className="movieFilterItem">7+</li>
-          </ul>
+          <FilterGroup minRating={minRating} handleRating={handleRating} />
           <select className="movieSorting">
             <option value="">SortBy</option>
             <option value="">Date</option>
@@ -39,7 +53,7 @@ const MovieList = () => {
         </div>
       </header>
       <div className="movieCards">
-        {movies.map((movie) => (
+        {filterMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>

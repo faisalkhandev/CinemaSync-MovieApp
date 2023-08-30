@@ -7,7 +7,6 @@ function App() {
     <div className="appMain">
       <Navbar />
       <MovieList />
-      <main>main content</main>
     </div>
   );
 }
