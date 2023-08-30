@@ -3,10 +3,15 @@ import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
   return (
-    <a href="" className="movieCard">
+    // eslint-disable-next-line react/jsx-no-target-blank
+    <a
+      href={`https://www.themoviedb.org/movie/${movie.id}`}
+      target="_blank"
+      className="movieCard"
+    >
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt="fast and furious 5"
+        alt={movie.title}
         className="moviePoster"
       />
 
