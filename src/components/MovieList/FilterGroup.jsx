@@ -1,31 +1,18 @@
 /* eslint-disable react/prop-types */
-const FilterGroup = ({ minRating, handleRating }) => {
+const FilterGroup = ({ minRating, onClickFilter, ratings }) => {
   return (
     <ul className="movieFilter">
-      <li
-        className={
-          minRating === 8 ? "movieFilterItem active" : "movieFilterItem"
-        }
-        onClick={() => handleRating(8)}
-      >
-        8+
-      </li>
-      <li
-        className={
-          minRating === 7 ? "movieFilterItem active" : "movieFilterItem"
-        }
-        onClick={() => handleRating(7)}
-      >
-        7+
-      </li>
-      <li
-        className={
-          minRating === 6 ? "movieFilterItem active" : "movieFilterItem"
-        }
-        onClick={() => handleRating(6)}
-      >
-        6+
-      </li>
+      {ratings.map((rate) => (
+        <li
+          className={
+            minRating === rate ? "movieFilterItem active" : "movieFilterItem"
+          }
+          key={rate}
+          onClick={() => onClickFilter(rate)}
+        >
+          {rate}+
+        </li>
+      ))}
     </ul>
   );
 };
