@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>
-        <a href="/" style={{ color: "#ffe400", textDecoration: "none" }}>
+        <a href="/" style={{ textDecoration: "none" }}>
           CinemaSync
         </a>
       </h1>

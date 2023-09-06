@@ -13,7 +13,7 @@
 }
 
 .movieFilterItem.active {
-  border-bottom: 2px solid #ffe400;
+  border-bottom: 2px solid var(--heading_color);
 }
 .movieFilter {
   list-style: none;
@@ -31,6 +31,8 @@
 .movieFilterItem {
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .movieSorting {

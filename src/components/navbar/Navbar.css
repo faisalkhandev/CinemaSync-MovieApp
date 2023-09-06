@@ -3,12 +3,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 2px solid var(--heading_color);
 }
 
 .navbar > h1 {
   font-size: 30px;
-  color: var(--heading_color);
+  color: var(--heading_color) !important;
+  text-decoration: none;
 }
 .navbarLinks {
   display: flex;
@@ -19,7 +20,11 @@
   align-items: center;
   font-size: 20px;
   font-weight: 500;
-  color: var(--body_color);
+  color: var(--heading_color);
   text-decoration: none;
   padding: 0 15px;
+}
+
+a {
+  color: var(--heading_color);
 }

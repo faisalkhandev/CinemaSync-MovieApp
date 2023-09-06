@@ -7,11 +7,11 @@ import { ReactComponent as Moon } from "./Moon.svg";
 
 const DarkMode = () => {
   const setDarkTheme = () => {
-    document.querySelector("body").setAttribute("date-theme", "dark");
+    document.querySelector("body").setAttribute("data-theme", "dark");
   };
 
   const setLightTheme = () => {
-    document.querySelector("body").setAttribute("date-theme", "light");
+    document.querySelector("body").setAttribute("data-theme", "light");
   };
 
   function toggleTheme(e) {

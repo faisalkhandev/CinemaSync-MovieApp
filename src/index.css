@@ -4,23 +4,15 @@
 }
 
 :root {
-  --body_background_light: #acacac;
-  --body_color_light: #000;
-  --heading_color_light: #000;
-
-  --body_background_dark: #101010;
-  --body_color_dark: #fff;
-  --heading_color_dark: #ffe400;
+  --body_background: #000000;
+  --body_color: #ffffff;
+  --heading_color: #ffe400;
 }
 
 [data-theme="light"] {
-  background-color: var(--body_background_light);
-  color: var(--body_color_light);
-}
-
-[data-theme="dark"] {
-  background-color: var(--body_background_dark);
-  color: var(--body_color_dark);
+  --body_background: #ffffff;
+  --body_color: #000000;
+  --heading_color: #000000;
 }
 
 body {
@@ -28,8 +20,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--body_background_dark);
-  color: var(--body_color_dark);
+  background-color: var(--body_background);
+  color: var(--body_color);
 }
 .alignCenter {
   display: flex;
