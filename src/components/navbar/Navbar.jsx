@@ -1,3 +1,4 @@
+import DarkMode from "../DarkMode/DarkMode";
 import "./Navbar.css";
 const Navbar = () => {
   return (
@@ -8,6 +9,7 @@ const Navbar = () => {
         </a>
       </h1>
       <div className="navbarLinks">
+        <DarkMode />
         <a href=""> Popular 🔥</a>
         <a href=""> Top Rated 🌟</a>
         <a href=""> Latest 🎉</a>

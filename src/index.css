@@ -3,16 +3,33 @@
   src: url("./assets/fonts/Montserrat.woff2");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --body_background_light: #acacac;
+  --body_color_light: #000;
+  --heading_color_light: #000;
+
+  --body_background_dark: #101010;
+  --body_color_dark: #fff;
+  --heading_color_dark: #ffe400;
+}
+
+[data-theme="light"] {
+  background-color: var(--body_background_light);
+  color: var(--body_color_light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--body_background_dark);
+  color: var(--body_color_dark);
 }
 
 body {
-  background-color: #101010;
-  color: white;
   font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--body_background_dark);
+  color: var(--body_color_dark);
 }
 .alignCenter {
   display: flex;

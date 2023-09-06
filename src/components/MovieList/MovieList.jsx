@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+import _ from "lodash";
+
 import "./MovieList.css";
+import MovieCard from "./MovieCard";
 import FilterGroup from "./FilterGroup";
 
 const MovieList = () => {
@@ -16,6 +18,18 @@ const MovieList = () => {
   useEffect(() => {
     fetchApi();
   }, []);
+
+  useEffect(() => {
+    if (sort.by !== "default") {
+      const sortedMovies = _.orderBy(
+        movies,
+        filterMovies,
+        [sort.by],
+        [sort.order]
+      );
+      setFilterMovies(sortedMovies);
+    }
+  }, [sort]);
 
   async function fetchApi() {
     const response = await fetch(
@@ -34,7 +48,9 @@ const MovieList = () => {
       setFilterMovies(movies);
     } else {
       setMinRating(rate);
-      const filterMovies = movies.filter((movie) => movie.vote_average >= rate);
+      const filterMovies = movies.filter(
+        (movie) => movie.vote_average >= rate && movie.vote_average < rate + 1
+      );
       setFilterMovies(filterMovies);
     }
   }
@@ -45,7 +61,7 @@ const MovieList = () => {
       return { ...prev, [name]: value };
     });
   }
-  console.log("sort ", sort);
+  // console.log("sort ", sort);
 
   return (
     <section className="movieList">
