@@ -6,6 +6,7 @@
 [data-theme="light"] {
   --body_background: #ffffff;
   --body_color: #000000;
+  --heading_color: #000000;
   --heading-color: hsl(0, 0%, 100%);
 }
 [data-theme="dark"] {
