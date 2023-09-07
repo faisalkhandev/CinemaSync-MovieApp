@@ -4,6 +4,10 @@
   justify-content: space-between;
   padding: 0 30px;
   border-bottom: 2px solid var(--heading_color);
+  position: sticky;
+  top: 0;
+  background-color: var(--heading-color);
+  z-index: 999;
 }
 
 .navbar > h1 {
