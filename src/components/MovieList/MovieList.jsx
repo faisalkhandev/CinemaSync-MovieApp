@@ -6,7 +6,7 @@ import "./MovieList.css";
 import MovieCard from "./MovieCard";
 import FilterGroup from "./FilterGroup";
 
-const MovieList = () => {
+const MovieList = ({ types, title }) => {
   const [movies, setMovies] = useState([]);
   const [filterMovies, setFilterMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
@@ -33,7 +33,7 @@ const MovieList = () => {
 
   async function fetchApi() {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=7f533d2cdc2e890da0986033612db155"
+      `https://api.themoviedb.org/3/movie/${types}?api_key=7f533d2cdc2e890da0986033612db155`
     );
     const data = await response.json();
     setMovies(data.results);
@@ -64,9 +64,9 @@ const MovieList = () => {
   // console.log("sort ", sort);
 
   return (
-    <section className="movieList">
+    <section className="movieList" id={types}>
       <header className="alignCenter movieListHeader">
-        <h2 className="movieListHeading">Popular 🔥</h2>
+        <h2 className="movieListHeading">{title} 🔥</h2>
         <div className="movieListFs">
           <FilterGroup
             minRating={minRating}

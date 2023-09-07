@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="appMain">
       <Navbar />
-      <MovieList />
+      <MovieList types="popular" title="Popular" />
+      <MovieList types="top_rated" title="Top Rated" />
+      <MovieList types="upcoming" title="UpComing" />
     </div>
   );
 }

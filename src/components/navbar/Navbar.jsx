@@ -10,9 +10,9 @@ const Navbar = () => {
       </h1>
       <div className="navbarLinks">
         <DarkMode />
-        <a href=""> Popular 🔥</a>
-        <a href=""> Top Rated 🌟</a>
-        <a href=""> Latest 🎉</a>
+        <a href="#popular"> Popular 🔥</a>
+        <a href="#top_rated"> Top Rated 🌟</a>
+        <a href="#upcoming"> Upcoming 🎉</a>
       </div>
     </nav>
   );

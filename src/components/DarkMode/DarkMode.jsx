@@ -8,11 +8,21 @@ import { ReactComponent as Moon } from "./Moon.svg";
 const DarkMode = () => {
   const setDarkTheme = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
+    localStorage.setItem("selectedTheme", "dark");
   };
 
   const setLightTheme = () => {
     document.querySelector("body").setAttribute("data-theme", "light");
+    localStorage.setItem("selectedTheme", "light");
   };
+
+  const selectedTheme = localStorage.getItem("selectedTheme");
+
+  if (selectedTheme === "light") {
+    setLightTheme();
+  } else {
+    setDarkTheme();
+  }
 
   function toggleTheme(e) {
     console.log("i am called");
@@ -30,7 +40,7 @@ const DarkMode = () => {
         type="checkbox"
         id="darkmode-toggle"
         onChange={toggleTheme}
-        defaultChecked={true}
+        defaultChecked={selectedTheme !== "light"}
       />
       <label className="dark_mode_label" htmlFor="darkmode-toggle">
         <Sun />

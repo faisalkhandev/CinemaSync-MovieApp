@@ -15,6 +15,10 @@
   --heading_color: #000000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
