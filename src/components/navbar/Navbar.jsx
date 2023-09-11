@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>
         <a href="/" style={{ textDecoration: "none" }}>
-          Saleem Moves dot com
+          CinemaSync Movie App
         </a>
       </h1>
       <div className="navbarLinks">
