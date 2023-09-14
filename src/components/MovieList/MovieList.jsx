@@ -6,6 +6,7 @@ import "./MovieList.css";
 import MovieCard from "./MovieCard";
 import FilterGroup from "./FilterGroup";
 
+// eslint-disable-next-line react/prop-types
 const MovieList = ({ types, title }) => {
   const [movies, setMovies] = useState([]);
   const [filterMovies, setFilterMovies] = useState([]);
@@ -17,7 +18,7 @@ const MovieList = ({ types, title }) => {
 
   useEffect(() => {
     fetchApi();
-  }, []);
+  }, [types]);
 
   useEffect(() => {
     if (sort.by !== "default") {

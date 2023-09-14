@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import DarkMode from "../DarkMode/DarkMode";
 import "./Navbar.css";
 const Navbar = () => {
@@ -10,9 +11,9 @@ const Navbar = () => {
       </h1>
       <div className="navbarLinks">
         <DarkMode />
-        <a href="#popular"> Popular 🔥</a>
-        <a href="#top_rated"> Top Rated 🌟</a>
-        <a href="#upcoming"> Upcoming 🎉</a>
+        <NavLink to="/"> Popular 🔥</NavLink>
+        <NavLink to="/topRated"> Top Rated 🌟</NavLink>
+        <NavLink to="/upComing"> Upcoming 🎉</NavLink>
       </div>
     </nav>
   );
